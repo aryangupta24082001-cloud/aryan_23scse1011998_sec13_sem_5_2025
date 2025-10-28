@@ -1,0 +1,19 @@
+public class Solution {
+    public int hammingWeight(int n) {
+        int count = 0;
+        while (n != 0) {
+            // Add 1 if the least significant bit is 1
+            count += n & 1;
+            // Shift right by one bit (unsigned)
+            n >>>= 1;
+        }
+        return count;
+    }
+
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        System.out.println(sol.hammingWeight(11));          // 3
+        System.out.println(sol.hammingWeight(128));         // 1
+        System.out.println(sol.hammingWeight(2147483645));  // 30
+    }
+}
